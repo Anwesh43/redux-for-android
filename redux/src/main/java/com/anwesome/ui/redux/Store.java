@@ -18,6 +18,9 @@ public class Store {
     }
     public void dispatch(Action action) {
         state = reducer.onReduce(state,action);
+        for(StoreSubscriber storeSubscriber:subscribers) {
+            storeSubscriber.onSubscribe();
+        }
 
     }
     public void subscribe(StoreSubscriber storeSubscriber) {
