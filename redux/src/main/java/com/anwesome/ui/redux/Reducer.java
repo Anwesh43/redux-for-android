@@ -5,4 +5,5 @@ package com.anwesome.ui.redux;
  */
 public interface Reducer {
     State onReduce(State state,Action action);
+    State getDefaultState();
 }
